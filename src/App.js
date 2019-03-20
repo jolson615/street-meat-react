@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Navbar from './components/Navbar';
 import Splash from './components/Splash';
 import Review from './components/Review';
-import proto_review from './components/review_data';
+import review_array from './review_data';
 import './App.css';
 
 class App extends Component {
@@ -13,7 +13,7 @@ class App extends Component {
 		<Splash/>
 		<div className = "container">
 			<div className="row">
-				<Review review = { proto_review } />
+
 			</div>
 		</div>
       </div>
