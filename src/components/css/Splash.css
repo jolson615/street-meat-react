@@ -11,7 +11,7 @@
 .Splash .primary-text {
 	text-transform: uppercase;
 	font-size: 9rem;
-    font-weight: 900;
+  font-weight: 900;
 	color: white;
 	padding: 1rem 4rem;
 	text-shadow: 4px 4px #E44D26;
@@ -20,13 +20,13 @@
 .Splash .secondary-text {
 	text-transform: uppercase;
 	font-size: 3rem;
-    font-weight: 700;
+  font-weight: 700;
 	color: white;
 	padding: 15px 20px 5px;
 	text-align: center;
 }
 
-.intro-text{
+.paragraph-text{
 	margin: 1rem;
 	color: white;
 	font-weight: 500;
@@ -50,3 +50,19 @@
 	text-align: left;
 }
 
+.Splash .testimonials{
+	background: #E44D26;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #F16529, #E44D26);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #F16529, #E44D26); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	text-align: left;
+  margin-top: 2rem
+}
+
+.Splash .secondary-text-testimonials {
+	text-transform: uppercase;
+	font-size: 2rem;
+  font-weight: 700;
+	color: white;
+	padding: 15px 20px 5px;
+	text-align: center;
+}

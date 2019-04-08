@@ -1,11 +1,3 @@
-let proto_review = {
-	name: "Example Meat Review",
-	headline: "The food was very good, but my stomach wasn't.",
-	summary: "The food at this stand was delicious. While some stands only put a little bit of hot sauce on their lamb over rice, this place loaded it on. The only problem I had was 45 minutes after the meal when it felt like someone lit a stick of dynamite off in my stomach. Eaters beware!",
-	stars: "⭐⭐⭐",
-	posted: "1 day ago"
-};
-
 let review_array = [
 	{name: "Hallal Gals",
 	headline: "Best hallal food the city has to offer.",
@@ -31,13 +23,13 @@ let review_array = [
 	stars: "⭐",
 	posted: "5 days ago"
 },
-		{name: "Hot Dogs by Dyandra",
+	{name: "Hot Dogs by Dyandra",
 	headline: "Better than a Nathan's Hot Dog!",
 	summary: "Every year, millions of people trek out to Nathan's Hot Dogs to try this their legendary dogs. Well, instead of taking the Q train out to Coney Island, you can have a BETTER hot dog right in mid-town Manhattan (if that is closer). Don't forget to try Dyandra's home made ketchup!",
 	stars: "⭐⭐⭐⭐",
 	posted: "6 days ago"
 },
-		{name: "Nathan's Hot Dogs",
+	{name: "Nathan's Hot Dogs",
 	headline: "Over-priced and mediocre",
 	summary: "Nathan's is a New York institution, but having tried the hot dogs myself I have to say this... WAY over-priced. My meal costs over $10 and all I had was a hot dog, fries, and a soda. Food was OK, but not for the price. Yes, you can say you ate at Nathan's, but it'll cost you.",
 	stars: "⭐⭐",
@@ -45,4 +37,4 @@ let review_array = [
 },
 ];
 
-export default review_array;
+export default { review_array }
