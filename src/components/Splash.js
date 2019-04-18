@@ -19,12 +19,6 @@ const Splash = ()=>{
 						<p className="paragraph-text">Here at We Eat Street Meat we know not all street meat was created equal. That is why we've gone out and tested food from carts and trucks around the city to let our users know which meat to eat and which to avoid. We've put our stomachs on the line for our users, so they won't have to.</p>
 					</div>
 				</div>
-				<div className="row">
-					<div className="col-6 offset-3 testimonials">
-						<h3 className="secondary-text-testimonials">Testimonial</h3>
-						<p className="paragraph-text"></p>
-					</div>
-				</div>
 			</div>
 		</div>
 	)

@@ -17,7 +17,7 @@
 ## Launch
 Have students navigate to a website of their choice that is made with React (REMEMBER: They made a list of websites in the first lecture). Instruct students to Look over the page and look for any component of the website that seems to be repeated. The content doesn't have to be the same, but these components should have similar features. For example, the AirBnB website has cards that use that have a photo, title, price, and review; this is a repeated component. What repeated component can you find?
 
-![AirBnB](./images/airbnb.png)
+![AirBnB](images/airbnb.png)
 
 #### Questions for Students
 * What component did you find that is repeated. What is similar about all these components?
@@ -28,30 +28,82 @@ Have students navigate to a website of their choice that is made with React (REM
 As we have discussed, React allows developers to build websites by piecing together various components. This makes the development processing easier, as the website is now built with modular pieces that can be modified, added, and removed. But what if we want to make a reuse and customize a component without copy and pasting our code into a whole new component? That's where props come in, and this allows us to use our components as templates that can be customized with specified PROPerties (see what I did there?).
 
 ### Passing Our First Property
-Props are passed from the parent element to the child element. We are going to pass our first prop from App.js component (parent) to our Splash.js (child) component. To do so, we are going to modify the code in the App.js and Splash.js files to the following:
+Props are passed from the parent element to the child element. We are going to pass our first prop from App.js component (parent) to our Testimonials.js (child) component. To do so, we are going to modify the code in the App.js and Testimonials.js files to the following:
 
-![First Prop App.js](./images/first-props-app.png)
+```javascript
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+       	<Navbar/>
+		    <Splash/>
+        <Testimonials userTestimonial = "We Eat Street Meat is the best food review site that has ever been built. Now I can eat my street meat with confidence I can sit through my afternoon meetings."/>
+    		<div className = "container">
+    			<div className="row">
 
-You will notice we only modified line 15 of the code. We added an attribute to the Splash element; "testimonial". By adding this attribute to our Splash element, it will be passed down as props from App.js.
+          </div>
+    		</div>
+    </div>
+    );
+  }
+}
+```
+
+You will notice we only modified line 16 of the code. We added an attribute to the Splash element; "firstTestimonial". By adding this attribute to our Testimonials element, it will be passed down as props from App.js.
 
 From the [React documentation](https://reactjs.org/docs/components-and-props.html): "When React sees an element representing a user-defined component, it passes JSX attributes to this component as a single object. We call this object “props”."
+
+```javascript
+function Testimonial(props){
+  return(
+    <div className="Testimonials">
+      <div className="row">
+        <div className="col-6 offset-3 testimonial">
+          <h3 className="secondary-text-testimonial">Testimonial</h3>
+          <p className="paragraph-text"> {props.userTestimonial}</p>
+        </div>
+      </div>
+    </div>
+  )
+}
+```
+
+Now we are going to modify two lines of code in our Testimonials.js file:
+We need to have our functional component take in a parameter called "props". By creating this parameter we are now able to pass the props object down from App.js into our Testimonial component.
+
+We are then going to render our prop onto the screen. To embed our prop into the HTML we have written, we just have to add { props.testimonial } to the paragraph element on the page.
 
 >It should be noted that this is also our first use of JSX syntax. React uses a syntax extension of javascript called JSX. JSX allows us to embed javascript into our HTML by wrapping the javascript in curly braces. To use the javascript variable "testimonial" in our HTML, we just need to add curly braced around it.
 
 >This might be a good time to discuss JSX briefly and how it is used in React projects. To learn more about JSX please refer to the [React documentation](https://reactjs.org/docs/introducing-jsx.html)
 
 
-![First Prop Splash.js](./images/first-props-splash.png)
+>As the instructor, it might be good to pause before editing line 25 and console.log(props) in the Testimonials component. Students will then be able to see that there is an object that has been passed down to Testimonials component. They will also be able to see that the props object contains a key with the same name as the attribute we added to Testimonials element in App.js.
 
-Now we are going to modify two lines of code in our Splash.js file:
-On line 4 we need to have our functional component take in a parameter called "props". By creating this parameter we are now able to pass the props object down from App.js into our Splash component.
+In the example we just did, we passed a hard-coded string down as the prop "userTestimonial." We can also pass down a javascript variable (or even a function! But that's for another time) as a prop. Lets try this by refactoring our code a bit. We are going to create a variable called "testimonial" and set it equal to our previous review. Then we can pass it down as a prop by using JSX syntax as seen below:
 
-On lines 25 we are going to render our prop onto the screen. To embed our prop into the HTML we have written, we just has to add { props.testimonial } to the paragraph element on the page.
+```javascript
+class App extends Component {
+  render() {
+    let testimonial = "We Eat Street Meat is the best food review site that has ever been built. Now I can eat my street meat with confidence I can sit through my afternoon meetings."
+    return (
+      <div className="App">
+       	<Navbar/>
+		    <Splash/>
+        <Testimonials
+          userTestimonial = { testimonial }/>
+    		<div className = "container">
+    			<div className="row">
 
->As the instructor, it might be good to pause before editing line 25 and console.log(props) in the Splash component. Students will then be able to see that there is an object that has been passed down to Splash component. They will also be able to see that the props object contains a key with the same name as the attribute we added to Splash element in App.js.
+          </div>
+    		</div>
+    </div>
+    );
+  }
+}
+```
 
-
-![Testimonials](./images/testimonial.png)
+![Testimonials](./images/testimonials.png)
 
 If done correctly, our web site should look like the example above.
 
@@ -64,17 +116,62 @@ To complete We Eat Street Meat, we need to add reviews to our site. We have save
 
 Lets create our first review card by adding the following code to our App.js file:
 
-![Multiple Props App.js](./images/app-multiple-Props.png)
+```javascript
+class App extends Component {
+  render() {
+    let userTestimonial = "We Eat Street Meat is the best food review site that has ever been built. Now I can eat my street meat with confidence I can sit through my afternoon meetings."
+    return (
+      <div className="App">
+       	<Navbar/>
+		    <Splash/>
+        <Testimonials firstTestimonial = "We Eat Street Meat knows where the best tasting (and more importantly, safest) food carts are in the city. Thanks We Eat Street Meat!" secondTestimonial = { userTestimonial }/>
+    		<div className = "container">
+    			<div className="row">
+            <ReviewCard
+              name={ reviews.review_array[0].name}
+              headline={ reviews.review_array[0].headline}
+              summary={ reviews.review_array[0].summary}
+              stars={ reviews.review_array[0].stars}
+              posted={ reviews.review_array[0].posted}
+            />
+          </div>
+    		</div>
+    </div>
+    );
+  }
+}
+```
 
 The first step is to create a Review Card element and add the attributes as seen above.
 
 >To help students understand how this nested data is being extracted from the array, it would be a good idea to console.log(review) and look at the review object. Then, walk students through how to get the first name from the review review in the array, the first headline, etc.
 
-![Multiple Props Review Card](./images/review-card-props.png)
+```javascript
+function ReviewCard(props){
+	return(
+		<div className="col-4 Review">
+			<div className="card text-center mb-3r">
+			  <div className="card-header">
+					{ props.name }
+			  </div>
+			  <div className="card-body">
+					<h5 className="card-title">{ props.headline }</h5>
+					<p className="card-text">{ props.summary }</p>
+					<p className="card-text">{ props.stars }</p>
+					<a href="#" className="btn btn-warning">Full Review</a>
+			  </div>
+			  <div className="card-footer text-muted">
+					{ props.posted }
+			  </div>
+			</div>
+		</div>
+	);
+};
+```
 
 Now we need to modify ReviewCard.js to utilize the props that are being passed down to it.
 
-![Example Review](./images/review.png)
+![Example Review](./images/review-cards.png)
 
 If done correctly, the review should appear as shown above.
 
