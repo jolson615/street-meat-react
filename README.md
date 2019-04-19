@@ -172,10 +172,6 @@ function ReviewCard(props){
 
 Now we need to modify ReviewCard.js to utilize the props that are being passed down to it.
 
-![Example Review](./images/review-card.png)
-
-If done correctly, the review should appear as shown above.
-
 #### Question for Students
 * How could we pass the review data to each card using only one attribute?
 
