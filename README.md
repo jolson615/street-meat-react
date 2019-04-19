@@ -36,13 +36,13 @@ class App extends Component {
     return (
       <div className="App">
        	<Navbar/>
-		    <Splash/>
-        <Testimonials userTestimonial = "We Eat Street Meat is the best food review site that has ever been built. Now I can eat my street meat with confidence I can sit through my afternoon meetings."/>
-    		<div className = "container">
-    			<div className="row">
+	<Splash/>
+        <Testimonials userTestimonial = "We Eat Street Meat is the best food review site that has ever been built. Now I can 	     eat my street meat with confidence I can sit through my afternoon meetings."/>
+    	<div className = "container">
+    	  <div className="row">
 
           </div>
-    		</div>
+    	</div>
     </div>
     );
   }
@@ -89,14 +89,13 @@ class App extends Component {
     return (
       <div className="App">
        	<Navbar/>
-		    <Splash/>
-        <Testimonials
-          userTestimonial = { testimonial }/>
-    		<div className = "container">
-    			<div className="row">
+	<Splash/>
+        <Testimonials userTestimonial = { testimonial }/>
+    	<div className = "container">
+    	  <div className="row">
 
           </div>
-    		</div>
+    	</div>
     </div>
     );
   }
@@ -119,14 +118,14 @@ Lets create our first review card by adding the following code to our App.js fil
 ```javascript
 class App extends Component {
   render() {
-    let userTestimonial = "We Eat Street Meat is the best food review site that has ever been built. Now I can eat my street meat with confidence I can sit through my afternoon meetings."
+    let testimonial = "We Eat Street Meat is the best food review site that has ever been built. Now I can eat my street meat with confidence I can sit through my afternoon meetings."
     return (
       <div className="App">
        	<Navbar/>
-		    <Splash/>
-        <Testimonials firstTestimonial = "We Eat Street Meat knows where the best tasting (and more importantly, safest) food carts are in the city. Thanks We Eat Street Meat!" secondTestimonial = { userTestimonial }/>
-    		<div className = "container">
-    			<div className="row">
+	<Splash/>
+        <Testimonials userTestimonial = { testimonial }/>
+    	<div className = "container">
+    	  <div className="row">
             <ReviewCard
               name={ reviews.review_array[0].name}
               headline={ reviews.review_array[0].headline}
@@ -135,7 +134,7 @@ class App extends Component {
               posted={ reviews.review_array[0].posted}
             />
           </div>
-    		</div>
+    	</div>
     </div>
     );
   }
@@ -149,22 +148,22 @@ The first step is to create a Review Card element and add the attributes as seen
 ```javascript
 function ReviewCard(props){
 	return(
-		<div className="col-4 Review">
-			<div className="card text-center mb-3r">
-			  <div className="card-header">
-					{ props.name }
-			  </div>
-			  <div className="card-body">
-					<h5 className="card-title">{ props.headline }</h5>
-					<p className="card-text">{ props.summary }</p>
-					<p className="card-text">{ props.stars }</p>
-					<a href="#" className="btn btn-warning">Full Review</a>
-			  </div>
-			  <div className="card-footer text-muted">
-					{ props.posted }
-			  </div>
-			</div>
-		</div>
+	  <div className="col-4 Review">
+	    <div className="card text-center mb-3r">
+	      <div className="card-header">
+	        { props.name }
+	      </div>
+	      <div className="card-body">
+	        <h5 className="card-title">{ props.headline }</h5>
+	        <p className="card-text">{ props.summary }</p>
+	        <p className="card-text">{ props.stars }</p>
+	        <a href="#" className="btn btn-warning">Full Review</a>
+	      </div>
+	      <div className="card-footer text-muted">
+	       { props.posted }
+	      </div>
+	    </div>
+	  </div>
 	);
 };
 ```
