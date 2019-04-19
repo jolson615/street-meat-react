@@ -8,8 +8,8 @@
 ## Sequence
 
 1. [Launch](#launch)
-2. Passing a single property
-3. Passing multiple properties
+2. [Passing a Single Property](#singleprop)
+3. [Passing Multiple Properties](#multipleprop)
 4. [Close](#close)
 
 >
@@ -27,7 +27,7 @@ Have students navigate to a website of their choice that is made with React (REM
 ## Components and props
 As we have discussed, React allows developers to build websites by piecing together various components. This makes the development processing easier, as the website is now built with modular pieces that can be modified, added, and removed. But what if we want to make a reuse and customize a component without copy and pasting our code into a whole new component? That's where props come in, and this allows us to use our components as templates that can be customized with specified PROPerties (see what I did there?).
 
-### Passing Our First Property
+### Passing Our First Property <a id="singleprop"></a>
 Props are passed from the parent element to the child element. We are going to pass our first prop from App.js component (parent) to our Testimonials.js (child) component. To do so, we are going to modify the code in the App.js and Testimonials.js files to the following:
 
 ```javascript
