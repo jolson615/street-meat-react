@@ -8,7 +8,7 @@
 ## Sequence
 
 1. [Launch](#launch)
-2. [Passing a Single Property](#singleprop)
+2. [Passing Our First Property](#singleprop)
 3. [Passing Multiple Properties](#multipleprop)
 4. [Close](#close)
 
