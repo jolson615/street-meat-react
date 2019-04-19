@@ -27,7 +27,8 @@ Have students navigate to a website of their choice that is made with React (REM
 ## Components and props
 As we have discussed, React allows developers to build websites by piecing together various components. This makes the development processing easier, as the website is now built with modular pieces that can be modified, added, and removed. But what if we want to make a reuse and customize a component without copy and pasting our code into a whole new component? That's where props come in, and this allows us to use our components as templates that can be customized with specified PROPerties (see what I did there?).
 
-### Passing Our First Property <a id="singleprop"></a>
+<a id="singleprop"></a>
+### Passing Our First Property 
 Props are passed from the parent element to the child element. We are going to pass our first prop from App.js component (parent) to our Testimonials.js (child) component. To do so, we are going to modify the code in the App.js and Testimonials.js files to the following:
 
 ```javascript
@@ -106,6 +107,7 @@ class App extends Component {
 
 If done correctly, our web site should look like the example above.
 
+<a id="multipleprop"></a>
 ### Passing Multiple Properties
 We can pass multiple props down to a component, allowing us to use a component as a template that can be customized. By passing more props, we can add more and more customizations to our components. This is how the component we looked at the beginning of class might have had the same size or styling, but completely different images and text.
 
